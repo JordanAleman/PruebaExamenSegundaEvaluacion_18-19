@@ -8,20 +8,6 @@ import java.util.ArrayList;
 
 public class Asignatura {
 
-	private String nombreAsignatura;
-	
-	
-	public String getNombreAsignatura() {
-		return nombreAsignatura;
-	}
-
-
-
-	public void setNombreAsignatura(String nombreAsignatura) {
-		this.nombreAsignatura = nombreAsignatura;
-	}
-
-
 
 	public ArrayList<String> crearListaAsignaturas(String rutaFichero){
 		try {

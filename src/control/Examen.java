@@ -1,7 +1,7 @@
 package control;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 import modelo.Alumno;
 import modelo.Asignatura;
@@ -14,18 +14,30 @@ public class Examen {
 
 		ArrayList<String> asignaturas = new Asignatura().crearListaAsignaturas("ficheros/asignaturas.txt");
 		ArrayList<String> alumnos = new Alumno().crearListaAlumnos("ficheros/notasAlumnos.txt");
-		ArrayList<Integer[]> notasAlumnos = new NotaAlumno().crearListaNotaAlumnos("ficheros/notasAlumnos.txt");
+		ArrayList<String[]> alumnosNotas = new Alumno().crearListaAlumnosConNotas("ficheros/notasAlumnos.txt");
+		ArrayList<Integer[]> notasAlumnos = new NotaAlumno().crearListaNotaAlumnosPorFichero("ficheros/notasAlumnos.txt");
 		
 		int notaMediaAsignatura, notaMediaAlumno;
 		
-		// Muestra por pantalla alumnos, notas y asignaturas
-		for (int i = 0; i < notasAlumnos.size(); i++) {
-			for (int j = 0; j < notasAlumnos.get(i).length; j++) {
-				System.out.print("[" + asignaturas.get(j) + ": " + notasAlumnos.get(i)[j] + "] ");
-			}
-			System.out.println(alumnos.get(i));
-		}
+//		// Muestra por pantalla alumnos, notas y asignaturas
+//		for (int i = 0; i < notasAlumnos.size(); i++) {
+//			for (int j = 0; j < notasAlumnos.get(i).length; j++) {
+//				System.out.print("[" + asignaturas.get(j) + ": " + notasAlumnos.get(i)[j] + "] ");
+//			}
+//			System.out.println(alumnos.get(i));
+//		}
 
+		for (int i = 0; i < asignaturas.size(); i++) {
+			System.out.print("[" + asignaturas.get(i) + "] ");
+		}
+		
+		System.out.println("\n");
+		for (int i = 0; i < alumnosNotas.size(); i++) {
+			for (int j = 0; j < alumnosNotas.get(i).length; j++) {
+				System.out.print(alumnosNotas.get(i)[j] + " ");
+			}
+			System.out.println("");
+		}
 		
 		// Nota media de cada asignatura
 		System.out.println("\nNota media asignaturas:");

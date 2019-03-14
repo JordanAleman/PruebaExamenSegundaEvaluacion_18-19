@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class NotaAlumno {
 	
-	public ArrayList<Integer[]> crearListaNotaAlumnos(String rutaFichero){
+	public ArrayList<Integer[]> crearListaNotaAlumnosPorFichero(String rutaFichero){
 		try {
 			ArrayList<Integer[]> notaAlumnos = new ArrayList<Integer[]>();	
 			BufferedReader fichero = new BufferedReader(new FileReader(rutaFichero));
@@ -42,4 +42,5 @@ public class NotaAlumno {
 		}
 		return null;
 	}
+	
 }
